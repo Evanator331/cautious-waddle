@@ -14,13 +14,13 @@ import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.IterativeRobot;
 
 public class Robot extends iterativeRobot {
-  private Timer timer = new Timer();
+  private Timer timer = new Timer(); //Timer class
 
-  private SpeedController m_motor4;
-  private SpeedController m_motor5;
-  private SpeedController m_motor6;
-  private SpeedController m_motor7;
-  private SpeedController m_motor8;
+  private WPI_TalonSRX m_motor4;
+  private WPI_TalonSRX m_motor5;
+  private WPI_TalonSRX m_motor6;
+  private WPI_TalonSRX m_motor7;
+  private WPI_TalonSRX m_motor8;
 
   @Override
   public void robotInit() {
@@ -37,13 +37,15 @@ public class Robot extends iterativeRobot {
 
   @Override
 public void teleopInit() {
-for (int i = 0; i<5, i++) //Loops the motor tests
+for (int i = 0; i<5, i++) //Loops the motor test five times
 {
   
-System.out.println("Motor 4"); //Prints which motor is running
-m_motor4.set(.1); //Starts motor
-timer.delay(1); //Length of motor time
-m_motor4.stop(); //Stops motor
+  // SRX motors
+  
+System.out.println("Motor 4"); //Prints out which motor is running
+m_motor4.set(.1); //Sets the speed of the motor and starts the motor
+timer.delay(1); //Keeps the time the motor is running for one second
+m_motor4.stop(); //Stops the motor that is running
 
 System.out.println("Motor 5");
 m_motor5.set(.1);
@@ -67,5 +69,5 @@ m_motor8.stop();
   }
  }
 }
-//5 CAN motors and 3 motors that idk what to do with
+
 
